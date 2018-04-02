@@ -1,0 +1,129 @@
+
+    <!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <title>武汉租房网</title>
+  <meta name="keywords" content="武汉租房信息">
+   <meta name="description" content="提供武汉最全租房信息（租房子热线：400-8786-999）。">
+  <meta name="author" content="XX">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <link rel="shortcut icon" href="http://www.hizhu.com/favicon.ico" type="image/x-icon" />
+  <link rel="stylesheet" href="common.css?v=2.9">
+  <link rel="stylesheet" href="list.css?v=2.8">
+  <script>
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "//hm.baidu.com/hm.js?18b46c5f1ee0f1dea79e1dc272c5deb3";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+    var _vds = _vds || [];
+    window._vds = _vds;
+    (function(){
+      _vds.push(['setAccountId', 'a61fdcacae2d73ee']);
+      (function() {
+        var vds = document.createElement('script');
+        vds.type='text/javascript';
+        vds.async = true;
+        vds.src = ('https:' == document.location.protocol ? 'https://' : 'http://') + 'dn-growing.qbox.me/vds.js';
+        var s = document.getElementsByTagName('script')[0];
+        s.parentNode.insertBefore(vds, s);
+      })();
+    })();
+  </script>
+</head>
+<body>
+  <!-- <input type="hidden" id="get_city_url" value="http://www.hizhu.com/shanghai/"> -->
+  <div class="main">
+    <div class="common_w">
+      <div class="list_header cf">
+        <!-- 面包屑导航 -->
+        <div class="navigate fl">
+                    <a href="/"></a>
+                  </div>
+        <div class="input_wrapper common_search fr">
+          <input class="input_box" id="input_box" type="text" placeholder="输入地址、写字楼、园区或地铁站" onpaste="myOnpaste()">
+          <a class="search icon_search" href="javascript:;">搜索</a>
+          <ul class="search_result">
+          </ul>
+          <div class="history">
+            <p class="his_title"><span>搜索历史</span><span class="clearhistory">清除记录</span></p>
+            <ul class="history_main"></ul>
+          </div>
+        </div>
+      </div>
+     
+      <div class="db_title">
+      </div>
+
+      <div class="list_main">
+        <div class="list_main_sort">
+          <a href=""  id="default_sort">综合排序</a>
+         <!--  <a href="http://www.hizhu.com/shanghai/sqlist2/a24/b0/c0/d0/e0/f0/g0/h0/?sort=2" id="distance">距离从近到远</span> -->
+          <a href="" id="price_sort" class="price_sort cur"><em>价格从低到高</em></a>
+          <a href="" id="price_sort2" class="price_sort "><em class="top">价格从高到低</em></a>
+          <a href="" id="area_sort" >面积从大到小</a>
+        </div>
+        <div class="list_main_data" id = "list_main_data">
+
+
+                    <ul>
+
+            <li v-for="house in houses"  class="data_list">
+                  <div class="data_list_main">
+                  <a class="house_left" href="http://www.hizhu.com/shanghai/roomDetail/06e51090-6ee5-e6e1-b741-1efa7ea91107.html" target="_blank"><img src='https://imgcdn.loulifang.com.cn/roomII/CBCBE45685C55EC67DA8A83A9CB341B15234_246_184.png'>
+                     </a>
+                   <div class="house_text">
+                    <h3 class="house_title">
+                       <a href="http://www.hizhu.com/shanghai/roomDetail/06e51090-6ee5-e6e1-b741-1efa7ea91107.html" target="_blank">{{house.room_nature}}&nbsp;·&nbsp;{{house.name}}&nbsp;·&nbsp;{{house.house_type}}</a>
+                    </h3>
+                    <p>{{house.room_nature}}&nbsp;·&nbsp;{{house.room_size}}m²'&nbsp;·&nbsp;{{house.room_heading}}</p>
+                    <p class="intro">距离&nbsp;{{house.subway_no}}-{{house.subway_station}}-{{house.subway_distance}}米</p>
+                    <ol><li>付一押一</li><li>精装修</li></ol>                   </div>
+                                        <div class="data_list_price"><p><span>{{house.price}}</span>&nbsp;元/月</p></div>                  </div>
+                 </li> 
+            </ul>
+        </div>
+      </div>
+      <div id="pageTool">
+        <div class="ui-paging-container"><ul> <li class="ui-pager focus">1</li><li class="ui-pager"><a class="num" href="?&sort=2&p=2">2</a></li><li class="ui-pager"><a class="num" href="?&sort=2&p=3">3</a></li> <li class="ui-pager"><a class="end" href="?&sort=2&p=100">...100</a></li> <li class="js-page-next js-page-action ui-pager"><a class="next" href="?&sort=2&p=2">下一页</a></li> </ul></div>
+      </div>
+    </div>
+  </div>
+      </div>
+    </div> 
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+</body>
+<!-- <script src="/Publ<!-- ic/js/jquery-2.1.4.min.js"></script>
+<script src="/Public/js/query.js"></script> -->
+<script src="/Public/js/paging.js?v=2.8"></script>
+<script src="/Public/js/common.js?v=2.8"></script>
+<script src="/Public/js/list.js?v=2.8"></script>
+
+<script src="https://cdn.jsdelivr.net/npm/vue@2.5.16/dist/vue.js"></script>
+<script>
+
+  var app = new Vue({
+    el:"#list_main_data",
+    data:{
+      houses:[
+        {name:"恒大翡翠华庭",method:"整租",room_nature:"整租",house_type:"三室一厅一卫",room_size:30,
+          room_heading:"南北",floor:"6/30",address:"四新南路108号",subway_no:6,subway_station:"国博南站",
+          subway_distance:500,pay:"押一付一",remark:"精装修 限女生",NO:"23423424",price:500},
+        {name:"新城璟堂",method:"合租",room_nature:"次卧",house_type:"三室一厅一卫",room_size:30,
+          room_heading:"南北",floor:"6/30",address:"四新南路108号",subway_no:6,subway_station:"国博北站",
+          subway_distance:500,pay:"押一付一",remark:"精装修 限男生",NO:"23423424",price:500},
+        {name:"中铁世纪金桥",method:"合租",room_nature:"床位",house_type:"三室一厅一卫",room_size:30,
+          room_heading:"南北",floor:"6/30",address:"四新南路108号",subway_no:"六号线",subway_station:"国博北站",
+          subway_distance:500,pay:"押一付一",remark:"精装修 限男生",NO:"23423424",price:500},
+      ]
+    }
+  })
+  console.log(app.houses)
+  
+   
+  
+</script>
+</html>
